@@ -1,0 +1,1 @@
+export { BaseDao } from './BaseDao/index.js';

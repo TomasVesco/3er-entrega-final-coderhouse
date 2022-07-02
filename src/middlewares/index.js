@@ -1,0 +1,1 @@
+export { onAuthorizationHeaders } from "./onAuthorizationHeaders.js";
