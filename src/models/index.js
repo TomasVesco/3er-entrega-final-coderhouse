@@ -1,1 +1,1 @@
-export { usersAtlasDB } from './MongoAtlas/index.js';
+export { usersAtlasDB } from './AtlasUserModel/atlasUserModel.js';

@@ -1,2 +1,4 @@
-export { ServerService } from "./ServerService/index.js";
-export { DatabaseService } from "./DatabaseService/index.js";
+export { ServerService } from "./ServerServices/index.js";
+export { DatabaseService } from "./DataBaseServices/index.js";
+export { PossibleErrors } from "./Errors/index.js";
+export { UserService } from "./UserService/index.js";

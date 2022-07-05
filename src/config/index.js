@@ -2,11 +2,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const { PORT, DB_URL } = process.env;
+const { PORT, DBAtlas, SESSION_SECRET } = process.env;
 
 const config = {
   PORT: PORT || 4005,
-  DB_URL: DB_URL,
+  DBAtlas: DBAtlas,
+  SESSION_SECRET: SESSION_SECRET
 };
 
 export { config };
