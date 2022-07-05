@@ -1,5 +1,3 @@
-import bcrypt from 'bcrypt';
-
 class DAO {
     constructor(model){
         this.collection = model;
@@ -11,11 +9,17 @@ class DAO {
             return error;
         }
     }
-    async save( obj ){
+    async save(obj){
         try {
             const test = new this.collection(obj);
             return await test.save();
-            // return await this.collection.insertMany( obj );
+        } catch (error) {
+            return error;
+        }
+    }
+    async find(props){
+        try {
+            return await this.collection.findOne({...props});
         } catch (error) {
             return error;
         }

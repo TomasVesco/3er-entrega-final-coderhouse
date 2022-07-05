@@ -1,9 +1,9 @@
 import { Router } from "express";
+import passport from "passport";
 
 const router = Router();
 
-import { onCheckCredentials } from "../../../../middlewares/index.js";
-router.post('/', onCheckCredentials, async(req, res) => {
+router.post('/', passport.authenticate('login'), async(req, res) => {
     res.status(200).send('Login success');
 });
 
