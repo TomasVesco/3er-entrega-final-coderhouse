@@ -3,8 +3,12 @@ import { Router } from "express";
 const router = Router();
 
 router.post('/', async(req, res) => {
-    req.session.destroy();
-    res.status(200).send('Logout success');
+    try {
+        req.session.destroy();
+        res.status(200).send('Logout success');
+    } catch(error){
+        return error;
+    }
 });
 
 export const logout = router;

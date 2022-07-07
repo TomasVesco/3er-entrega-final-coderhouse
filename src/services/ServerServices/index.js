@@ -9,6 +9,8 @@ import { home } from "./routers/index.js";
 import { signUp } from "./routers/index.js";
 import { logout } from "./routers/index.js";
 import { login } from "./routers/index.js";
+import { products } from "./routers/index.js";
+import { cart } from "./routers/index.js";
 import { passport } from '../Passport/index.js';
 
 const app = express();
@@ -39,7 +41,9 @@ const ServerRoutes = () => {
   app.use('/api/home', home),
   app.use('/api/signup', signUp),
   app.use('/api/logout', logout),
-  app.use('/api/login', login)
+  app.use('/api/login', login),
+  app.use('/api/products', products),
+  app.use('/api/cart', cart);
 }
 
 const ServerService = {
