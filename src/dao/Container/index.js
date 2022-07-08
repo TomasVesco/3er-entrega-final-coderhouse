@@ -5,7 +5,7 @@ class DAO {
     async getAll(){
         try{
             return await this.collection.find({});
-        } catch(error) {
+        } catch(error){
             return error;
         }
     }
@@ -13,14 +13,21 @@ class DAO {
         try {
             const test = new this.collection(obj);
             return await test.save();
-        } catch (error) {
+        } catch(error){
             return error;
         }
     }
     async find(props){
         try {
             return await this.collection.findOne({...props});
-        } catch (error) {
+        } catch(error){
+            return error;
+        }
+    }
+    async deleteByID(id){
+        try {
+            return await this.collection.deleteOne({'_id': id});
+        } catch(error){
             return error;
         }
     }

@@ -13,22 +13,40 @@ async function createCart(){
 }
 
 async function checkID(id){
-    let response;
-    if(id.length === 24){
-        response = await cartDAO.find({id});
+    const response = await cartDAO.find({"_id": id});
+    if(response !== null && response.reason === undefined){
+        return response;
     } else {
-        response = PossibleErrors.CARTID;
+        return PossibleErrors.CARTID;
     }
-    return response;
 }
 
-async function addProduct(cart, product){
+async function addProductToCart(cart, product){
     await cartDAO.updateCart(cart, product);
+}
+
+async function deleteCart(id){
+    const response = await cartDAO.find({"_id": id});
+    if(response.reason === undefined){
+        return await cartDAO.deleteByID(id);
+    } else {
+        return PossibleErrors.CARTID;
+    }
+}
+
+async function deletePoC(cart, productID){
+    if(cart.products.some(p => p.id === productID)){
+        return await cartDAO.deleteProductOfCart(cart, productID);
+    } else {
+        return PossibleErrors.PRODUCTINCART;
+    }
 }
 
 export const CartService = {
     getCarts,
     createCart,
     checkID,
-    addProduct
+    addProductToCart,
+    deleteCart,
+    deletePoC
 }

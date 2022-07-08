@@ -9,13 +9,12 @@ async function getProducts(){
 }
 
 async function checkID(id){
-    let response;
-    if(id.length === 24){
-        response = await productDAO.find({id});
+    const response = await productDAO.find(id);
+    if(response.reason === undefined){
+        return response;
     } else {
-        response = PossibleErrors.PRODUCTID;
+        return PossibleErrors.PRODUCTID;
     }
-    return response;
 }
 
 export const ProductService = {
