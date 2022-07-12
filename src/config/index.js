@@ -6,8 +6,8 @@ const { PORT, DBAtlas, SESSION_SECRET } = process.env;
 
 const config = {
   PORT: PORT || 4005,
-  DBAtlas: DBAtlas,
-  SESSION_SECRET: SESSION_SECRET
+  DBAtlas,
+  SESSION_SECRET
 };
 
 export { config };

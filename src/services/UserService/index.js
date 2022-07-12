@@ -1,4 +1,4 @@
-import { userDAO as DAO } from '../../dao/UserExtend/index.js';
+import { userDAO as DAO } from '../../dao/userDAO/index.js';
 import { UtilsUserService } from './utils/index.js';
 import { PossibleErrors } from '../Errors/index.js';
 

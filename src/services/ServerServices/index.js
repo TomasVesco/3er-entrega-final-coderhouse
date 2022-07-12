@@ -9,6 +9,7 @@ import { home } from "./routers/index.js";
 import { signUp } from "./routers/index.js";
 import { logout } from "./routers/index.js";
 import { login } from "./routers/index.js";
+import { info } from './routers/index.js';
 import { products } from "./routers/index.js";
 import { cart } from "./routers/index.js";
 import { passport } from '../Passport/index.js';
@@ -43,7 +44,8 @@ const ServerRoutes = () => {
   app.use('/api/logout', logout),
   app.use('/api/login', login),
   app.use('/api/products', products),
-  app.use('/api/cart', cart);
+  app.use('/api/cart', cart),
+  app.use('/api/info', info);
 }
 
 const ServerService = {

@@ -1,0 +1,16 @@
+5) implemetar envío de email al adminstrador:
+    - Asunto: Nuevo registro
+    - Cuerto: Datos de registro del nuevo usuario.
+
+6) implementar envío de email y whatsapp al administrador:
+    - Asunto: Nuevo pedido de [NOMBRE, EMAIL]
+    - Cuerpo: Lista completa de los productos adquiridos.
+
+7) implementar envío de mensaje de texto al cliente:
+    - Cuerpo: Pedido recibido y en proceso.
+
+8) configurar back con front
+
+9) readme
+    - .env example
+    - endpoints

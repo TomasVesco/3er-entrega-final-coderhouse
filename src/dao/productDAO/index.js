@@ -1,4 +1,4 @@
-import { DAO } from "../Container/index.js";
+import { DAO } from "../DAO/index.js";
 
 import { productAtlasDB } from '../../models/index.js';
 

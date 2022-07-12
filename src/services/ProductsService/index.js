@@ -1,4 +1,4 @@
-import { productDAO as DAO } from '../../dao/ProductExtend/index.js';
+import { productDAO as DAO } from '../../dao/productDAO/index.js';
 
 import { PossibleErrors } from '../Errors/index.js';
 

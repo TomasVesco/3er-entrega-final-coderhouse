@@ -1,4 +1,4 @@
-import { cartDAO as DAO } from '../../dao/CartExtend/index.js'; 
+import { cartDAO as DAO } from '../../dao/cartDAO/index.js'; 
 
 import { PossibleErrors } from '../Errors/index.js';
 
