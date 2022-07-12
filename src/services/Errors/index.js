@@ -5,7 +5,9 @@ const PossibleErrors = {
     INTERVALSERVER: 'Interval Server Error',
     CARTID: 'ID of the cart do not exist',
     PRODUCTID: 'ID of the product do not exist',
-    PRODUCTINCART: 'Product ID do not exist on this cart'
+    PRODUCTINCART: 'Product ID do not exist on this cart',
+    AVATAR: 'Avatar is required',
+    CREATEUSERPROPS: 'Complete all the fields'
 }
 
 export { PossibleErrors };

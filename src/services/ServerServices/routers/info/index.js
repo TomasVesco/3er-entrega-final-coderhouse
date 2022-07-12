@@ -4,11 +4,11 @@ const router = Router();
 
 router.get('/', (req, res) => {
     try {
-        const { name, email, adress, age, phoneNumber, photo } = req.user;
+        const { name, email, address, age, phoneNumber, photo } = req.user;
         const user = {
             name,
             email,
-            adress,
+            address,
             age,
             phoneNumber,
             photo

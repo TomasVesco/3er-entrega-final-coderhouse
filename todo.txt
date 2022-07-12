@@ -9,8 +9,9 @@
 7) implementar envío de mensaje de texto al cliente:
     - Cuerpo: Pedido recibido y en proceso.
 
-8) configurar back con front
-
-9) readme
+8) readme
     - .env example
+
     - endpoints
+    
+9) configurar back con front

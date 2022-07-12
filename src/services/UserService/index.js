@@ -5,6 +5,11 @@ import { PossibleErrors } from '../Errors/index.js';
 const userDAO = new DAO();
 
 async function saveUser(user){
+    for(const propery in user){
+        if(user[propery]=== undefined){
+            return PossibleErrors.CREATEUSERPROPS;
+        }
+    }
     const isEmail = UtilsUserService.isEmail(user.email);
     if(!isEmail){
         return PossibleErrors.NOTEMAIL;
