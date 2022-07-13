@@ -1,17 +1,17 @@
-5) implemetar envío de email al adminstrador:
-    - Asunto: Nuevo registro
-    - Cuerto: Datos de registro del nuevo usuario.
-
-6) implementar envío de email y whatsapp al administrador:
-    - Asunto: Nuevo pedido de [NOMBRE, EMAIL]
-    - Cuerpo: Lista completa de los productos adquiridos.
-
 7) implementar envío de mensaje de texto al cliente:
     - Cuerpo: Pedido recibido y en proceso.
 
-8) readme
+8) modo fork y cluster
+
+9) loggers
+
+10 artillery
+
+11) heroku
+
+12) readme
     - .env example
 
     - endpoints
     
-9) configurar back con front
+13) configurar back con front

@@ -1,20 +1,21 @@
 import bcrypt from 'bcrypt';
+import parsePhoneNumber from 'libphonenumber-js';
 
 async function encrypt(password){
     return await bcrypt.hash(password, 10);
 }
 
-function isEmail(email){
+function checkEmail(email){
     const emailRegExp = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    const isEmail = emailRegExp.test(email);
-    if(!isEmail){
-        return 0;
-    } else {
-        return 1;
-    }
+    return emailRegExp.test(email);
+}
+
+function checkPhone(phone){
+    return parsePhoneNumber(`${phone}`, 'AR').isValid()
 }
 
 export const UtilsUserService = {
     encrypt,
-    isEmail
+    checkEmail,
+    checkPhone
 }
