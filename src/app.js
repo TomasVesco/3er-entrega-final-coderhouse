@@ -3,19 +3,27 @@ import CPUs from 'os';
 
 import { ServerService, DatabaseService } from "./services/index.js";
 import { MODE } from './services/ServerServices/utils/index.js';
+import log4js from './services/ServerServices/logger/config.js';
 
-if(MODE === 'CLUSTER' && cluster.isPrimary){
-    for(let i = 0; i < CPUs.cpus().length; i++){
-        cluster.fork(() => {
-            for(let i = 0; i < CPUs.cpus().length; i++){
-                DatabaseService.init();
-                ServerService.ServerInit();
-                ServerService.ServerRoutes();
-            }
-        });
+try {
+    if(MODE === 'CLUSTER' && cluster.isPrimary){
+        for(let i = 0; i < CPUs.cpus().length; i++){
+            cluster.fork(() => {
+                for(let i = 0; i < CPUs.cpus().length; i++){
+                    DatabaseService.init();
+                    ServerService.ServerInit();
+                    ServerService.ServerRoutes();
+                }
+            });
+        }
+    } else {
+        DatabaseService.init();
+        ServerService.ServerInit();
+        ServerService.ServerRoutes();
     }
-} else {
-    DatabaseService.init();
-    ServerService.ServerInit();
-    ServerService.ServerRoutes();
+} catch (error) {
+    const loggerError = log4js.getLogger('error');
+    loggerError.error(error)
+    const loggerInfo = log4js.getLogger('default');
+    loggerInfo.error(error)
 }

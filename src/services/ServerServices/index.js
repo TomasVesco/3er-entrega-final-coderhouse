@@ -4,6 +4,8 @@ import session from "express-session";
 import MongoStore from 'connect-mongo';
 
 import { onAuthorizationHeaders } from "../../middlewares/index.js";
+import { passport } from '../Passport/index.js';
+import log4js from "./logger/config.js";
 import { config } from "../../config/index.js";
 import { home } from "./routers/index.js";
 import { signUp } from "./routers/index.js";
@@ -13,13 +15,13 @@ import { info } from './routers/index.js';
 import { products } from "./routers/index.js";
 import { cart } from "./routers/index.js";
 import { payment } from "./routers/index.js";
-import { passport } from '../Passport/index.js';
 
 const app = express();
 
 const ServerInit = () => {
+  const loggerInfo = log4js.getLogger('default');
   app.listen(config.PORT, () =>
-  console.log(`Server running on port ${config.PORT}`)
+    loggerInfo.info(`Server running on port ${config.PORT}`)
   );
   app.use(onAuthorizationHeaders);
   app.use(express.json());
