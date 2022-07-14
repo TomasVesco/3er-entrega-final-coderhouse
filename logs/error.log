@@ -1,0 +1,10 @@
+[2022-07-14T18:19:55.352] [ERROR] error - Error: Cannot init client. Please provide correct options
+    at new MongoStore (/home/pixel/Escritorio/Backend/Entregas/3er-entrega-proyectofinal/node_modules/connect-mongo/build/main/lib/MongoStore.js:119:19)
+    at Function.create (/home/pixel/Escritorio/Backend/Entregas/3er-entrega-proyectofinal/node_modules/connect-mongo/build/main/lib/MongoStore.js:136:16)
+    at Object.ServerInit (file:///home/pixel/Escritorio/Backend/Entregas/3er-entrega-proyectofinal/src/services/ServerServices/index.js:31:23)
+    at file:///home/pixel/Escritorio/Backend/Entregas/3er-entrega-proyectofinal/src/app.js:21:23
+    at ModuleJob.run (node:internal/modules/esm/module_job:198:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:385:24)
+    at async loadESM (node:internal/process/esm_loader:88:5)
+    at async handleMainPromise (node:internal/modules/run_main:61:12)
