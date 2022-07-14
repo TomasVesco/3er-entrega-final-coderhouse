@@ -1,5 +1,3 @@
-10 artillery
-
 11) heroku
 
 12) readme
