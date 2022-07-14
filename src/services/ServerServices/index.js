@@ -19,7 +19,7 @@ import { payment } from "./routers/index.js";
 const app = express();
 
 const ServerInit = () => {
-  const loggerInfo = log4js.getLogger('default');
+  const loggerInfo = log4js.getLogger('console');
   app.listen(config.PORT, () =>
     loggerInfo.info(`Server running on port ${config.PORT}`)
   );

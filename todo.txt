@@ -1,5 +1,3 @@
-9) loggers
-
 10 artillery
 
 11) heroku

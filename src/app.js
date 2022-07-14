@@ -24,6 +24,6 @@ try {
 } catch (error) {
     const loggerError = log4js.getLogger('error');
     loggerError.error(error)
-    const loggerInfo = log4js.getLogger('default');
+    const loggerInfo = log4js.getLogger('console');
     loggerInfo.error(error)
 }
