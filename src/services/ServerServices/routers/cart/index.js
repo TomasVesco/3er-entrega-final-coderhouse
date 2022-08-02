@@ -33,8 +33,8 @@ router.post('/:cartid/:productid', async(req, res) => {
             if(responseProduct._id === undefined){
                 res.status(404).send(responseProduct);
             } else { 
-                CartService.addProductToCart(responseCart, responseProduct);
-                res.status(200).send('Product added');
+                const response = await CartService.addProductToCart(responseCart, responseProduct);
+                res.status(200).send(response);
             }
         }
     } catch(error){

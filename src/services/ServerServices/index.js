@@ -23,7 +23,7 @@ const ServerInit = () => {
   app.listen(config.PORT, () =>
     loggerInfo.info(`Server running on port ${config.PORT}`)
   );
-  app.use(onAuthorizationHeaders);
+  // app.use(onAuthorizationHeaders);
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(cookieParser());

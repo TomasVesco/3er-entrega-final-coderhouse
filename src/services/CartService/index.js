@@ -22,7 +22,7 @@ async function checkID(id){
 }
 
 async function addProductToCart(cart, product){
-    await cartDAO.updateCart(cart, product);
+    return await cartDAO.updateCart(cart, product);
 }
 
 async function deleteCart(id){

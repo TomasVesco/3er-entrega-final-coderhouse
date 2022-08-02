@@ -1,10 +1,6 @@
 class DAO {
     constructor(model){
-        if(DAO.instance == null){
-            this.collection = model;
-            DAO.instance = this;
-        }
-        return DAO.instance;
+        this.collection = model;
     }
     async getAll(){
         try{
